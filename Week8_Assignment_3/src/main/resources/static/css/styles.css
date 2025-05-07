@@ -1,0 +1,422 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://media.istockphoto.com/id/1138429558/photo/rows-of-shelves.jpg?s=612x612&w=0&k=20&c=0E4uvaa-THb-Wj-QZKpUSPgwjfIMFW3vH7NRx1iWMIc=');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #333;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 100px;
+    background-color: darkred;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+header .nav-item a {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+header .nav-item a:hover {
+    color: lightgray;
+}
+
+
+.main {
+    padding: 120px 2rem 2rem;
+}
+
+.content {
+    margin: auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    max-width: fit-content;
+    text-align: center;
+    max-height: fit-content;
+}
+
+h1, #store-title {
+    color: darkred;
+}
+
+.welcome-message{
+    background-color: white;
+    padding: 15px;
+    max-height: 450px;
+    max-width: 700px;
+    align-items: center;
+    margin: 20px;
+    border-radius: 10px;
+    border: 3px solid red;
+
+}
+
+.btn.btn-primary {
+    background-color: darkred !important;
+    color: white !important;
+    border: 2px double red;
+
+}
+
+.card {
+    width: 550px;
+    margin: 50px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: larger;
+}
+
+.content-add {
+    margin: auto;
+    padding: 2rem;
+    border-radius: 150px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    text-align: center;
+    max-width: fit-content;
+    max-height: fit-content;
+
+}
+
+.card-body {
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: 20px;
+}
+
+.table th, .table td {
+    padding: 10px;
+    border: 1px solid white;
+    text-align: left;
+}
+
+.table th {
+    background-color: darkred;
+    color: white;
+    font-weight: bold;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: white;
+}
+
+.pagination {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: page;
+    bottom: 40px;
+    width: 100%;
+
+}
+
+.pagination-info, .pagination-no {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pagination-info div, .pagination-no div  {
+    margin: 5px;
+    padding: 8px;
+    background-color: white;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.pagination-no div a {
+    text-decoration: none;
+    color: darkred;
+    font-weight: bold;
+}
+
+
+.alert {
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.alert-success {
+    color: green;
+    background-color: lightgreen ;
+    border: 1px solid greenyellow;
+}
+
+#homeCarousel {
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#homeCarousel img {
+    height: 500px;
+    object-fit: cover;
+}
+
+.carousel-inner {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px;
+}
+
+.carousel-caption {
+    background-color: black;
+    opacity: 0.8;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: white;
+}
+
+.carousel-caption h5 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.carousel-caption p {
+    font-size: 1.5rem;
+}
+
+.footer {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background-color: cornflowerblue;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+footer .card-header {
+    background-color: cornflowerblue;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.footer-text {
+    color: white;
+}
+
+#my-footer {
+    position: fixed;
+    bottom: -100px;
+    min-width: 100vh;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 50px;
+        font-size: 1.5rem;
+    }
+
+    .content {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+        max-width: 95%;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .pagination {
+        bottom: 20px;
+    }
+
+    .pagination-info div,
+    .pagination-no div {
+        padding: 5px;
+        font-size: 0.9rem;
+    }
+
+}
+.login-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    border: 10px double black;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 600px;
+    max-height: 500px;
+}
+
+.login-page {
+    font-family: Arial, sans-serif;
+    background-image: url('https://media.istockphoto.com/id/1138429558/photo/rows-of-shelves.jpg?s=612x612&w=0&k=20&c=0E4uvaa-THb-Wj-QZKpUSPgwjfIMFW3vH7NRx1iWMIc=');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-title {
+    color: darkred;
+    margin-bottom: 20px;
+}
+
+.login-store-name{
+    font-size: 40px;
+    color: red;
+    font-style: italic;
+}
+
+.login-message, .login-error, .login-logout {
+    margin-bottom: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.login-input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1.5px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+
+}
+
+.login-button {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    background-color: darkred;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 16px;
+    align-self: center;
+}
+
+.login-button:hover {
+    background-color: orangered;
+}
+
+.login-register-button {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    background-color: darkred;
+    width: 70%;
+    align-self: center;
+}
+.login-register-button:hover {
+    background-color: orangered;
+}
+
+.register-page{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, darkred,red );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-size: 20px;
+}
+
+.register-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    color: red;
+}
+
+.register-title {
+    color: darkred;
+    font-style: oblique;
+    margin-bottom: 20px;
+    font-size: 48px;
+}
+
+.register-message {
+    margin-bottom: 20px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.register-label {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.register-input,
+.register-select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.register-button {
+    width: 100%;
+    padding: 12px;
+    background-color: darkred;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-button:hover {
+    background-color: orangered;
+}
+
+.error-container {
+    background-color: white;
+    height: 810px;
+}

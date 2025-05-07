@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Restock Page</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"> <!-- Allows the use of the stylesheet-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="main">
+    <header th:include="@{/fragments/header.html}"> </header> <!-- adds header component to file -->
+    <div class="content-add">
+        <div class="card">
+            <div class="card-body">
+        <h2 th:text="${item.name == null ? 'Add Item into Warehouse' : 'Update Item Information'}"></h2>
+                <!-- A Message that'll display an Error Message -->
+        <div th:if="${message}"  th:text="${message}" class="alert alert-danger"></div>
+                <!-- A Form to input information for a new item and submit and save to the Database-->
+        <form method="post" th:action="${item.name} == null ? @{/store/admin/restock} : @{/store/admin/update}" th:object="${item}">
+                <div class="form-group">
+                    <!-- For the ID Field -->
+            <input type="number" th:field="*{id}" hidden="hidden">
+                </div>
+                <div class="form-group">
+                    <!-- For the NAME Field -->
+            <label> NAME </label> <input type="text" th:field="*{name}">
+                </div>
+                <div class="form-group">
+                    <!-- For the BRAND Field -->
+            <label> BRAND </label> <input type="text" th:field="*{brand}">
+                </div>
+                <div class="form-group">
+                    <!-- For the CREATION DATE Field -->
+            <label> CREATION DATE </label> <input type="number" th:field="*{creationDate}">
+                </div>
+                <div class="form-group">
+                    <!-- For the PRICE Field -->
+            <label> PRICE </label> <input type="number" th:field="*{price}">
+                </div>
+            <!-- A Submit button to save the inputted information for the fields -->
+            <button type="Submit" class="btn btn-primary " th:text="${item.name == null ? 'Add to Stock' : 'Update Stock'}"></button>
+        </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Warehouse</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"> <!-- Allows the use of the stylesheet-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="main">
+    <header th:include="@{/fragments/header.html}"> </header> <!-- adds header component to file -->
+    <div class="content">
+        <h1>Items In Stock</h1>
+        <!-- Will sort the entire table by Brand Ascending -->
+        <a th:href="@{'/store/warehouse/1?sortField=brand&sortDirection=' + ${reverseSortDirection}}">
+            <button>Sort by Brand</button>
+        </a>
+        <!-- A Message that'll show up for a successful item implementation or When it isn't successful -->
+        <div th:if="${message}"  th:class="${message.toLowerCase().contains('success') ? 'alert alert-success' : 'alert alert-error'}" th:text="${message}"></div>
+
+
+        <!-- A Table that'll display each item in the Database -->
+        <table class="table table-striped">
+            <thead class="thead">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NAME</th>
+                <th scope="col">BRAND</th>
+                <th scope="col">CREATION DATE</th>
+                <th scope="col">PRICE</th>
+                <th scope="col" colspan="2">ACTION</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item:${items}">
+                <!--  Displays each field-->
+                <th scope="row" th:text="${item.id}"></th>
+                <td  th:text="${item.name}"></td>
+                <td th:text="${item.brand}"></td>
+                <td th:text="${item.creationDate}"></td>
+                <td th:text="${item.price}"></td>
+                <td>
+                    <!-- sends request to delete method in the controller-->
+                    <a th:href="@{/store/admin/delete/{id}(id=${item.id})}"
+                       class="btn btn-danger btn-sm">DELETE</a>
+                </td>
+                <td>
+                    <!-- sends request to update method in the controller-->
+                    <a th:href="@{/store/admin/update/{id}(id=${item.id})}"
+                       class="btn btn-danger btn-sm">UPDATE</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Pagination for Table: Displays The total number of items in Database, the current page, and total page numbers -->
+    <div class="pagination" th:if="${totalPages > 1}">
+        <div class="pagination-info">
+            <div> Total Items: <span th:text="${totalItems}"></span></div>
+            <div> Current Page: <span th:text="${currentPage}"></span></div>
+            <div> Total Pages: <span th:text="${totalPages}"></span></div>
+        </div>
+        <!-- Will create a button/link to each page to traverse between them-->
+        <div class="pagination-no">
+            <div th:each="i : ${#numbers.sequence(1, totalPages)}">
+                <div><a th:href="@{'/store/warehouse/' + ${i} + '?sortField=' + ${sortField} + '&sortDirection=' + ${sortDirection} }" th:text="${i}"></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
